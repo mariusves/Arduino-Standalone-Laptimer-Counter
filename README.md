@@ -3,15 +3,15 @@ Arduino Standalone Laptimer/Counter
 
 Parts  List:
   
-  1x Arduino Mega
-  1x LCD 20x4
-  6x LED (red/yellow/green)
-  6x Resistor 220 Ohm
-  2x Resistor 47 Ohm
-  2x Resistor 10k Ohm
-  1x Potentiometer 10k Ohm
-  2x Fork Light Sensor TCST 2103
-  2x Pushbuttons
+  - 1x Arduino Mega
+  - 1x LCD 20x4
+  - 6x LED (red/yellow/green)
+  - 6x Resistor 220 Ohm
+  - 2x Resistor 47 Ohm
+  - 2x Resistor 10k Ohm
+  - 1x Potentiometer 10k Ohm
+  - 2x Fork Light Sensor TCST 2103
+  - 2x Pushbuttons
   
 Current Features:
  - Starting Lights with random timer
