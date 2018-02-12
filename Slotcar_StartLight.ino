@@ -83,6 +83,12 @@ unsigned long START_RACE_PREV_MILLIS = 0;
 int RAND = 0;
 boolean RACE_STARTED = false;
 
+
+// Mech. Lane Change
+boolean TIMER_SLOT_1_CURRENT = false
+boolean TIMER_SLOT_2_CURRENT = false
+
+
 // Pin Setup
 void setup() {
   pinMode(LED_RED, OUTPUT);
@@ -102,13 +108,25 @@ void setup() {
 }
 
 void GET_LAPTIME1 () {
-  GET_LAPTIME1_TIME = micros();
-  PROCESS_TIME1 = true;
+  if (TIMER_SLOT_1_CURRENT == true){
+	GET_LAPTIME1_TIME = micros();
+    PROCESS_TIME1 = true;
+	TIMER_SLOT_1_CURRENT = false;
+  }
+  else {
+	TIMER_SLOT_1_CURRENT = true;
+  }
 }
 
 void GET_LAPTIME2 () {
-  GET_LAPTIME2_TIME = micros();
-  PROCESS_TIME2 = true;
+  if (TIMER_SLOT_2_CURRENT == true){
+	GET_LAPTIME2_TIME = micros();
+    PROCESS_TIME2 = true;
+	TIMER_SLOT_2_CURRENT = false;
+  }
+  else {
+	TIMER_SLOT_2_CURRENT = true;
+  }
 }
 
 void loop() {
