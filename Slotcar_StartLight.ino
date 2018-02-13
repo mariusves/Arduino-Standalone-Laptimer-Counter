@@ -84,9 +84,9 @@ int RAND = 0;
 boolean RACE_STARTED = false;
 
 
-// Mech. Lane Change
-boolean TIMER_SLOT_1_CURRENT = false
-boolean TIMER_SLOT_2_CURRENT = false
+// Mech. Lane Change variables
+boolean TIMER_SLOT_1_CURRENT = false;
+boolean TIMER_SLOT_2_CURRENT = false;
 
 
 // Pin Setup
@@ -166,7 +166,9 @@ void loop() {
             LCD.setCursor(9, 2);
             LCD.print("Go!");
             digitalWrite(LED_GREEN, HIGH);
-            START_RACE_PREV_MILLIS = START_RACE_CURRENT_MILLIS;
+            TIMER_SLOT_1_CURRENT = false;
+			TIMER_SLOT_2_CURRENT = false;
+			START_RACE_PREV_MILLIS = START_RACE_CURRENT_MILLIS;
             LAPCOUNT_SLOT1 = 0;
             LAPCOUNT_SLOT2 = 0;
             START_RACE_TIME = millis();
